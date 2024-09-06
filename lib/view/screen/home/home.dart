@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_design/view/common_widget/common_button.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -8,7 +7,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Doctor",),
+        title: const Text(
+          "Doctor",
+        ),
         centerTitle: true,
       ),
       body: Center(
@@ -16,17 +17,44 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 50,),
-            Image.asset(
-              "asset/image/doctor png.jpg",
-              height: 300,
-              width: 300,
+            SizedBox(
+              child: Image.asset(
+                "asset/image/splas2.png",
+                height: 350,
+                width: 350,
+              ),
             ),
-            const SizedBox(height: 120,),
-            CommonButton(buttonName: "", onTap: (){
-              const SizedBox(height: 120);
-              CommonButton(buttonName: "", onTap: (){});
-            })
+            const SizedBox(
+              height: 145,
+            ),
+            SizedBox(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 40,width: 400,
+                    child:
+                    OutlinedButton(
+                        onPressed: () {},
+                      style: ElevatedButton.styleFrom(shape: const RoundedRectangleBorder(side: BorderSide(color: Colors.deepPurpleAccent))),
+                        child: const Text(
+                          " বাংলা",
+                        ),
+                    ),
+                  ),
+                  const SizedBox(height: 20,),
+                  SizedBox(
+                    height: 40,width: 400,
+                    child: ElevatedButton(
+                        onPressed: () {},
+                      style: ElevatedButton.styleFrom(backgroundColor: Colors.deepOrange),
+                        child: const Text(
+                          " English",
+                        )
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
